@@ -2,18 +2,18 @@ $(function () {
 	// twitch streamers module
 	var TwitchStreamer = (function () {
 		// hold DOM elements
-
+		var $streamersContainer;
 
 		// array holds array of streamers to follow
 		var streamers = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff"];
 
-		//cache dom
-		// bind events
-		// get data fro mtwitch api
-			// generte list of streamer info
 
 		// module for handle streamers info
 		var StreamersInfo = (function () {
+			//source for template
+			var srcTmpl = $('#treamer-info-item');
+			//compile template
+			var streamerTmpl = Handlebars.compile(srcTmpl);
 
 			// get info about streamers
 			function getStreamerData(streamerName) {
@@ -25,14 +25,19 @@ $(function () {
 				});
 			}
 
+			// update dom and display streamer info
+			function displayStreamersData() {
+				
+			}
+
 			return {
-				getStreamerData: getStreamerData
+				displayStreamersData: displayStreamersData
 			}
 		})();
 
 		// cache DOM
 		function cacheDOM() {
-			// body...
+			$streamersContainer = $('#streamers-container');
 		}
 
 		// bind events
@@ -42,8 +47,7 @@ $(function () {
 
 		function init() {
 			cacheDOM();
-			//StreamersInfo.getStreamerData('TR7K');
-			//StreamersInfo.getStreamerData('freecodecamp');
+			StreamersInfo.displayStreamersData();
 			bindEvents();
 		}
 
