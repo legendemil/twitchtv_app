@@ -1,3 +1,13 @@
+// variables
+dark-grey = #444
+
+
+
+// mixins
+side-borders(size, type, color)
+	border-left size type color
+	border-right size type color
+
 *
 	font-family 'Poiret One', cursive !important
 
@@ -7,3 +17,15 @@ body
 	background-size cover
 	background-attachment fixed
 	background-position center center
+	
+
+#main-side
+	padding 0
+	background-color #fff
+	side-borders(2px, solid, dark-grey)
+	header
+		color #fff
+		margin-top -20px
+		background-color dark-grey 
+		padding 20px
+		

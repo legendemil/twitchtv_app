@@ -7,3 +7,15 @@ body {
   background-attachment: fixed;
   background-position: center center;
 }
+#main-side {
+  padding: 0;
+  background-color: #fff;
+  border-left: 2px solid #444;
+  border-right: 2px solid #444;
+}
+#main-side header {
+  color: #fff;
+  margin-top: -20px;
+  background-color: #444;
+  padding: 20px;
+}
