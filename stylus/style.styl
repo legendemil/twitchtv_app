@@ -34,6 +34,9 @@ body
 	.streamer-info-box
 		border-radius 50px
 		border 1px solid grey
+		transform-origin 0% 100%
+		animation-name show-streamer-info
+		animation-duration 1s
 		img.streamer-logo
 			border-radius 50px
 		div.streamer-info
@@ -41,7 +44,21 @@ body
 			.streamer-name
 				font-size 28px
 				margin-right 20px
+				margin-left 20px
+				& a,a:hover, a:visited
+					text-decoration none
 			.streamer-status
 				font-size 20px
 				
 			
+
+@keyframes show-streamer-info {
+	0% {
+		transform perspective(200px) scaleX(0.1) rotateX(90deg)	
+	}
+	
+	100% {
+		
+	}
+}
+

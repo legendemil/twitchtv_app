@@ -42,8 +42,8 @@ $(function () {
 
 		function init() {
 			cacheDOM();
-			StreamersInfo.getStreamerData('TR7K');
-			StreamersInfo.getStreamerData('freecodecamp');
+			//StreamersInfo.getStreamerData('TR7K');
+			//StreamersInfo.getStreamerData('freecodecamp');
 			bindEvents();
 		}
 

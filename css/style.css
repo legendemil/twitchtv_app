@@ -25,6 +25,13 @@ body {
 #main-content .streamer-info-box {
   border-radius: 50px;
   border: 1px solid #808080;
+  -webkit-transform-origin: 0% 100%;
+      -ms-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  -webkit-animation-name: show-streamer-info;
+          animation-name: show-streamer-info;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 #main-content .streamer-info-box img.streamer-logo {
   border-radius: 50px;
@@ -35,7 +42,25 @@ body {
 #main-content .streamer-info-box div.streamer-info .streamer-name {
   font-size: 28px;
   margin-right: 20px;
+  margin-left: 20px;
+}
+#main-content .streamer-info-box div.streamer-info .streamer-name a,
+#main-content .streamer-info-box div.streamer-info .streamer-name a:hover,
+#main-content .streamer-info-box div.streamer-info .streamer-name a:visited {
+  text-decoration: none;
 }
 #main-content .streamer-info-box div.streamer-info .streamer-status {
   font-size: 20px;
+}
+@-webkit-keyframes show-streamer-info {
+  0% {
+    -webkit-transform: perspective(200px) scaleX(0.1) rotateX(90deg);
+            transform: perspective(200px) scaleX(0.1) rotateX(90deg);
+  }
+}
+@keyframes show-streamer-info {
+  0% {
+    -webkit-transform: perspective(200px) scaleX(0.1) rotateX(90deg);
+            transform: perspective(200px) scaleX(0.1) rotateX(90deg);
+  }
 }
