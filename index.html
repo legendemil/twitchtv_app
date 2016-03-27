@@ -24,7 +24,15 @@
 					<h1>Twitch.tv streamers</h1>
 				</header>
 				<section id='main-content'>
-					
+					<!-- this is temporarly -->
+					<div class='streamer-info-box'>
+					<!-- user logo -->
+						<img src="img/placeholder.png" width="100px" height="100px" class="streamer-logo">
+						<div class='streamer-info'>
+							<span class='streamer-name'>User name</span>
+							<span class='streamer-status'>Status</span>
+						</div>
+					</div>
 				</section>
 			</div>
 		</div>
@@ -33,9 +41,10 @@
 
 	<!-- template for  item in streamer list-->
 	<script id='streamer-info-item' type="text/x-handlebars-template">
-		<!-- <div class='streamer-info-box'>
-			
-		</div> -->
+		<div class='streamer-info-box'>
+			<!-- user logo -->
+			<img src="{{logoUrl}}" >
+		</div>
 	</script>
 
 	<!-- Jquery -->

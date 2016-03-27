@@ -19,3 +19,23 @@ body {
   background-color: #444;
   padding: 20px;
 }
+#main-content {
+  padding: 10px;
+}
+#main-content .streamer-info-box {
+  border-radius: 50px;
+  border: 1px solid #808080;
+}
+#main-content .streamer-info-box img.streamer-logo {
+  border-radius: 50px;
+}
+#main-content .streamer-info-box div.streamer-info {
+  display: inline-block;
+}
+#main-content .streamer-info-box div.streamer-info .streamer-name {
+  font-size: 28px;
+  margin-right: 20px;
+}
+#main-content .streamer-info-box div.streamer-info .streamer-status {
+  font-size: 20px;
+}
