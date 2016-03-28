@@ -27,6 +27,16 @@ $(function () {
 				function renderTwitchUser(ctx) {
 					$streamersContainer.append(streamerTmpl(context));
 				}
+
+				// reduce twitch status info if necessarly
+				function reduceStatusLength(status) {
+					var maxLength = 60;
+					if(status.length > maxLength)
+					{
+						return status.slice(0, maxLength - 3) + '...';
+					}
+					return status;
+				}
 	
 				$.getJSON(url, function (data) {
 					//if is online
@@ -37,7 +47,7 @@ $(function () {
 							logoUrl: info.logo || logoUrlPlaceholder,
 							channelUrl: info.url,
 							streamerName: info.display_name,
-							status: info.status
+							status: reduceStatusLength(info.status)
 						}
 						// render data
 						renderTwitchUser(streamerTmpl(context));
