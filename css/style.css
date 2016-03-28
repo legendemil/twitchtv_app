@@ -20,13 +20,12 @@ body {
   padding: 20px;
 }
 #main-content {
-  padding: 10px;
+  padding: 20px;
 }
 #main-content .streamer-info-box {
   margin-top: 20px;
-  border-radius: 50px;
-  border: 1px solid #808080;
-  max-height: 100px;
+  border: 3px solid #444;
+  border-radius: 53px;
   -webkit-transform-origin: 0% 100%;
       -ms-transform-origin: 0% 100%;
           transform-origin: 0% 100%;
@@ -37,6 +36,7 @@ body {
 }
 #main-content .streamer-info-box img.streamer-logo {
   border-radius: 50px;
+  box-shadow: 10px 10px 8px -7px #808080;
 }
 #main-content .streamer-info-box div.streamer-info {
   display: inline-block;
@@ -53,6 +53,7 @@ body {
 }
 #main-content .streamer-info-box div.streamer-info .streamer-status {
   font-size: 1.2em;
+  overflow: hidden;
 }
 @-webkit-keyframes show-streamer-info {
   0% {

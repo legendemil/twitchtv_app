@@ -1,6 +1,6 @@
 // variables
 dark-grey = #444
-
+border-size = 3px
 
 
 // mixins
@@ -30,17 +30,17 @@ body
 		padding 20px
 	
 #main-content
-	padding 10px
+	padding 20px
 	.streamer-info-box
 		margin-top 20px
-		border-radius 50px
-		border 1px solid grey
-		max-height 100px
+		border border-size solid dark-grey
+		border-radius (50 + border-size) px
 		transform-origin 0% 100%
 		animation-name show-streamer-info
 		animation-duration 1s
 		img.streamer-logo
 			border-radius 50px
+			box-shadow 10px 10px 8px -7px grey
 		div.streamer-info
 			display inline-block
 			.streamer-name
@@ -51,6 +51,7 @@ body
 					text-decoration none
 			.streamer-status
 				font-size 1.2em
+				overflow hidden
 				
 			
 

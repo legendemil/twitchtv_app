@@ -5,7 +5,7 @@ $(function () {
 		var $streamersContainer;
 
 		// array holds array of streamers to follow
-		var streamers = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", 'comster404'];
+		var streamers = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", 'comster404', 'OgamingSC2', 'ESL_SC2'];
 
 
 		// module for handle streamers info
@@ -22,11 +22,13 @@ $(function () {
 				// reset context tmpl obj
 				var url = 'https://api.twitch.tv/kraken/streams/' + streamerName + '?callback=?';
 				var context;
+
+				// helper function to render data
+				function renderTwitchUser(ctx) {
+					$streamersContainer.append(streamerTmpl(context));
+				}
 	
 				$.getJSON(url, function (data) {
-					console.log(data);
-					
-
 					//if is online
 					if (data.stream) {
 						var info = data.stream.channel;
@@ -38,7 +40,7 @@ $(function () {
 							status: info.status
 						}
 						// render data
-						$streamersContainer.append(streamerTmpl(context));
+						renderTwitchUser(streamerTmpl(context));
 					} else if (data.status >= 400) {
 						// if user doesnt exist
 						context = {
@@ -48,7 +50,7 @@ $(function () {
 							status: "User doesn't exist"
 						}
 						// render data
-						$streamersContainer.append(streamerTmpl(context));
+						renderTwitchUser(streamerTmpl(context));
 					} else {
 						// if is offline
 						var url = 'https://api.twitch.tv/kraken/channels/' + streamerName + '?callback=?';
@@ -62,9 +64,10 @@ $(function () {
 								status: 'Offline'
 							}
 							// render data
-							$streamersContainer.append(streamerTmpl(context));
+							renderTwitchUser(streamerTmpl(context));
 						});				
 					}	
+
 				});
 			}
 
