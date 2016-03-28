@@ -25,7 +25,6 @@ body {
 #main-content .streamer-info-box {
   margin-top: 20px;
   max-height: 100px;
-  box-shadow: 6px 6px 20px -10px #444;
   border-radius: 53px;
   -webkit-transform-origin: 0% 100%;
       -ms-transform-origin: 0% 100%;
@@ -57,6 +56,12 @@ body {
   float: left;
   font-size: 1em;
   overflow: hidden;
+}
+.active-streamer {
+  box-shadow: 6px 6px 20px -10px #36d7b7;
+}
+.offline-streamer {
+  box-shadow: 6px 6px 20px -10px #ec644b;
 }
 @-webkit-keyframes show-streamer-info {
   0% {

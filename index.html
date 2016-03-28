@@ -35,7 +35,7 @@
 
 	<!-- template for  item in streamer list-->
 	<script id='streamer-info-item' type="text/x-handlebars-template">
-		<div class='streamer-info-box'>
+		<div class='streamer-info-box {{#if isActive}}active-streamer{{else}}offline-streamer{{/if}}'>
 			<!-- user logo -->
 			<img src="{{logoUrl}}" width="100px" height="100px" class="streamer-logo" >
 			<div class='streamer-info'>

@@ -49,7 +49,8 @@ $(function () {
 							logoUrl: info.logo || logoUrlPlaceholder,
 							channelUrl: info.url,
 							streamerName: info.display_name,
-							status: reduceStatusLength(info.status)
+							status: reduceStatusLength(info.status),
+							isActive: true
 						}
 						// render data
 						renderTwitchUser(streamerTmpl(context));
@@ -59,7 +60,8 @@ $(function () {
 							logoUrl: logoUrlPlaceholder,
 							channelUrl: '',
 							streamerName: streamerName,
-							status: "User doesn't exist or closed account."
+							status: "User doesn't exist or closed account.",
+							isActive: false
 						}
 						// render data
 						renderTwitchUser(streamerTmpl(context));
@@ -73,7 +75,8 @@ $(function () {
 								logoUrl: data.logo || logoUrlPlaceholder,
 								channelUrl: data.url,
 								streamerName: data.display_name,
-								status: 'Offline'
+								status: 'Offline',
+								isActive: false
 							}
 							// render data
 							renderTwitchUser(streamerTmpl(context));

@@ -1,12 +1,16 @@
 // variables
 dark-grey = #444
 border-size = 3px
-
+red = #EC644B
+green = #36D7B7
 
 // mixins
 side-borders(size, type, color)
 	border-left size type color
 	border-right size type color
+
+streamer-box-shadow(color)
+	box-shadow 6px 6px 20px -10px color
 
 *
 	font-family 'Poiret One', cursive !important
@@ -34,7 +38,7 @@ body
 	.streamer-info-box
 		margin-top 20px
 		max-height 100px
-		box-shadow 6px 6px 20px -10px dark-grey
+		// box-shadow 6px 6px 20px -10px dark-grey
 		border-radius (50 + border-size) px
 		transform-origin 0% 100%
 		animation-name show-streamer-info
@@ -55,7 +59,11 @@ body
 				float left
 				font-size 1em
 				overflow hidden
-	
+
+.active-streamer
+	streamer-box-shadow(green)
+.offline-streamer
+	streamer-box-shadow(red)	
 
 @keyframes show-streamer-info {
 	0% {
