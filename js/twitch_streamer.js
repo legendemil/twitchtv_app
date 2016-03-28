@@ -37,10 +37,12 @@ $(function () {
 					}
 					return status;
 				}
-	
+				
+				// get data from api
 				$.getJSON(url, function (data) {
 					//if is online
 					if (data.stream) {
+						console.log(data);
 						var info = data.stream.channel;
 						// set data for template
 						context = {
@@ -57,7 +59,7 @@ $(function () {
 							logoUrl: logoUrlPlaceholder,
 							channelUrl: '',
 							streamerName: streamerName,
-							status: "User doesn't exist"
+							status: "User doesn't exist or closed account."
 						}
 						// render data
 						renderTwitchUser(streamerTmpl(context));
@@ -83,8 +85,6 @@ $(function () {
 
 			// update dom and display streamer info
 			function displayStreamersData() {
-				var output = '';
-
 				// foreach streamer get info from api
 				streamers.forEach(function (streamerName) {
 					getStreamerData(streamerName);

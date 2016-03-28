@@ -24,7 +24,8 @@ body {
 }
 #main-content .streamer-info-box {
   margin-top: 20px;
-  border: 3px solid #444;
+  max-height: 100px;
+  box-shadow: 6px 6px 20px -10px #444;
   border-radius: 53px;
   -webkit-transform-origin: 0% 100%;
       -ms-transform-origin: 0% 100%;
@@ -42,9 +43,10 @@ body {
   display: inline-block;
 }
 #main-content .streamer-info-box div.streamer-info .streamer-name {
-  font-size: 2em;
-  margin-right: 20px;
+  width: 200px;
+  font-size: 1.5em;
   margin-left: 20px;
+  float: left;
 }
 #main-content .streamer-info-box div.streamer-info .streamer-name a,
 #main-content .streamer-info-box div.streamer-info .streamer-name a:hover,
@@ -52,7 +54,8 @@ body {
   text-decoration: none;
 }
 #main-content .streamer-info-box div.streamer-info .streamer-status {
-  font-size: 1.2em;
+  float: left;
+  font-size: 1em;
   overflow: hidden;
 }
 @-webkit-keyframes show-streamer-info {

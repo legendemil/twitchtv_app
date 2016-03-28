@@ -33,7 +33,8 @@ body
 	padding 20px
 	.streamer-info-box
 		margin-top 20px
-		border border-size solid dark-grey
+		max-height 100px
+		box-shadow 6px 6px 20px -10px dark-grey
 		border-radius (50 + border-size) px
 		transform-origin 0% 100%
 		animation-name show-streamer-info
@@ -44,16 +45,17 @@ body
 		div.streamer-info
 			display inline-block
 			.streamer-name
-				font-size 2em
-				margin-right 20px
+				width 200px
+				font-size 1.5em
 				margin-left 20px
+				float left
 				& a,a:hover, a:visited
 					text-decoration none
 			.streamer-status
-				font-size 1.2em
+				float left
+				font-size 1em
 				overflow hidden
-				
-			
+	
 
 @keyframes show-streamer-info {
 	0% {
@@ -64,4 +66,3 @@ body
 		
 	}
 }
-
