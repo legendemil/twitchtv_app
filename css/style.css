@@ -23,8 +23,10 @@ body {
   padding: 10px;
 }
 #main-content .streamer-info-box {
+  margin-top: 20px;
   border-radius: 50px;
   border: 1px solid #808080;
+  max-height: 100px;
   -webkit-transform-origin: 0% 100%;
       -ms-transform-origin: 0% 100%;
           transform-origin: 0% 100%;
@@ -40,7 +42,7 @@ body {
   display: inline-block;
 }
 #main-content .streamer-info-box div.streamer-info .streamer-name {
-  font-size: 28px;
+  font-size: 2em;
   margin-right: 20px;
   margin-left: 20px;
 }
@@ -50,17 +52,17 @@ body {
   text-decoration: none;
 }
 #main-content .streamer-info-box div.streamer-info .streamer-status {
-  font-size: 20px;
+  font-size: 1.2em;
 }
 @-webkit-keyframes show-streamer-info {
   0% {
-    -webkit-transform: perspective(200px) scaleX(0.1) rotateX(90deg);
-            transform: perspective(200px) scaleX(0.1) rotateX(90deg);
+    -webkit-transform: scaleX(0.1);
+            transform: scaleX(0.1);
   }
 }
 @keyframes show-streamer-info {
   0% {
-    -webkit-transform: perspective(200px) scaleX(0.1) rotateX(90deg);
-            transform: perspective(200px) scaleX(0.1) rotateX(90deg);
+    -webkit-transform: scaleX(0.1);
+            transform: scaleX(0.1);
   }
 }

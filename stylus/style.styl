@@ -32,8 +32,10 @@ body
 #main-content
 	padding 10px
 	.streamer-info-box
+		margin-top 20px
 		border-radius 50px
 		border 1px solid grey
+		max-height 100px
 		transform-origin 0% 100%
 		animation-name show-streamer-info
 		animation-duration 1s
@@ -42,19 +44,19 @@ body
 		div.streamer-info
 			display inline-block
 			.streamer-name
-				font-size 28px
+				font-size 2em
 				margin-right 20px
 				margin-left 20px
 				& a,a:hover, a:visited
 					text-decoration none
 			.streamer-status
-				font-size 20px
+				font-size 1.2em
 				
 			
 
 @keyframes show-streamer-info {
 	0% {
-		transform perspective(200px) scaleX(0.1) rotateX(90deg)	
+		transform  scaleX(0.1)
 	}
 	
 	100% {

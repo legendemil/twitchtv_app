@@ -37,10 +37,10 @@
 	<script id='streamer-info-item' type="text/x-handlebars-template">
 		<div class='streamer-info-box'>
 			<!-- user logo -->
-			<img src="img/placeholder.png" width="100px" height="100px" class="streamer-logo">
+			<img src="{{logoUrl}}" width="100px" height="100px" class="streamer-logo" >
 			<div class='streamer-info'>
-				<span class='streamer-name'><a href="#">User name</a></span>
-				<span class='streamer-status'>Status</span>
+				<span class='streamer-name'><a href="{{channelUrl}}" target='_blank'>{{streamerName}}</a></span>
+				<span class='streamer-status'>{{status}}</span>
 			</div>
 		</div>
 	</script>
