@@ -83,6 +83,26 @@ footer {
   color: #fff;
   background-color: #444;
 }
+@media (max-width: 645px) {
+  div.streamer-info {
+    width: 400px;
+    max-height: 100px;
+    margin-left: 10px;
+  }
+  .streamer-name {
+    margin-left: 2px !important;
+    float: none !important;
+  }
+  .streamer-status {
+    font-size: 13px !important;
+    float: none !important;
+  }
+}
+@media (max-width: 535px) {
+  div.streamer-info {
+    width: 200px;
+  }
+}
 @media (max-width: 320px) {
   div.streamer-info {
     width: 160px;
