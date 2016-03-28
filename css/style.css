@@ -50,6 +50,7 @@ body {
           animation-timing-function: cubic-bezier(0.53, 1, 0.73, 1);
 }
 #main-content .streamer-info-box div.streamer-info {
+  padding-top: 30px;
   float: left;
 }
 #main-content .streamer-info-box div.streamer-info .streamer-name {
@@ -93,6 +94,7 @@ footer {
 }
 @media (max-width: 645px) {
   div.streamer-info {
+    padding-top: 5px !important;
     width: 400px;
     max-height: 100px;
     margin-left: 10px;

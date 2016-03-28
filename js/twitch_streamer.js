@@ -59,7 +59,7 @@ $(function () {
 						// if user doesnt exist
 						context = {
 							logoUrl: logoUrlPlaceholder,
-							channelUrl: '',
+							channelUrl: 'https://www.twitch.tv/',
 							streamerName: streamerName,
 							status: "User doesn't exist or closed account.",
 							isActive: false
