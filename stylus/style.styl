@@ -13,7 +13,7 @@ streamer-box-shadow(color)
 	box-shadow 6px 6px 20px -10px color
 
 *
-	font-family 'Poiret One', cursive !important
+	font-family: 'Josefin Slab', serif !important
 
 
 body 
@@ -37,22 +37,29 @@ body
 	padding 20px
 	.streamer-info-box
 		margin-top 20px
-		max-height 100px
-		// box-shadow 6px 6px 20px -10px dark-grey
 		border-radius (50 + border-size) px
 		transform-origin 0% 100%
 		animation-name show-streamer-info
 		animation-duration 1s
 		img.streamer-logo
+			display block
+			float left
+			max-width 100px
+			max-height 100px
 			border-radius 50px
 			box-shadow 10px 10px 8px -7px grey
 		div.streamer-info
-			display inline-block
+			float left
 			.streamer-name
 				width 200px
 				font-size 1.5em
 				margin-left 20px
 				float left
+				@media (max-width: 1225px)
+					width 180px
+					margin-left 10px
+				@media (max-width: 1214px)
+					font-size 1.3em
 				& a,a:hover, a:visited
 					text-decoration none
 			.streamer-status
@@ -70,7 +77,29 @@ footer
 	text-align center
 	color #fff
 	background-color dark-grey
+	
+@media (max-width: 320px) 
+	div.streamer-info
+		width 160px
+		max-height 100px
+	.streamer-name
+		font-size 20px !important
+		margin-left 2px !important
+		float none !important
+	.streamer-status
+		font-size 12px !important
+		float none !important
 
+// @media (max-width: 992px) 
+// 	div.streamer-info
+// 		width 400px
+// 		height 100px
+// 	.streamer-name
+// 		font-size 20px !important
+// 		margin-left 2px !important
+// 	.streamer-status
+// 		font-size 12px !important
+		
 @keyframes show-streamer-info {
 	0% {
 		transform  scaleX(0.1)

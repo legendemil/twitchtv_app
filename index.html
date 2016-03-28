@@ -2,13 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Twitch.tv app</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-	<!-- use poiret one font -->
-	<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<!-- use josefin slab one font -->
+	<link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 
 	<!-- styles for website -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -41,16 +43,17 @@
 	<script id='streamer-info-item' type="text/x-handlebars-template">
 		<div class='streamer-info-box {{#if isActive}}active-streamer{{else}}offline-streamer{{/if}}'>
 			<!-- user logo -->
-			<img src="{{logoUrl}}" width="100px" height="100px" class="streamer-logo" >
+			<img src="{{logoUrl}}" class="streamer-logo" >
 			<div class='streamer-info'>
 				<div class='streamer-name'><a href="{{channelUrl}}" target='_blank'>{{streamerName}}</a></div>
 				<div class='streamer-status'>{{status}}</div>
 				{{#if isActive}}
-					<div>
-						Viewers: {{viewers}}
-					</div>
+				<div>
+					Viewers: {{viewers}}
+				</div>
 				{{/if}}
 			</div>
+			<div style='clear: both;'></div>
 		</div>
 	</script>
 
