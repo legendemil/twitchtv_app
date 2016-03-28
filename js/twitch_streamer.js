@@ -71,7 +71,6 @@ $(function () {
 						var url = 'https://api.twitch.tv/kraken/channels/' + streamerName + '?callback=?';
 
 						$.getJSON(url, function (data) {
-							console.log(data);
 							context = {
 								logoUrl: data.logo || logoUrlPlaceholder,
 								channelUrl: data.url,
