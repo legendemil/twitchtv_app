@@ -48,6 +48,10 @@ body
 			max-height 100px
 			border-radius 50px
 			box-shadow 10px 10px 8px -7px grey
+			animation-name rotate-logo
+			animation-delay .6s
+			animation-duration 1s
+			animation-timing-function  cubic-bezier(.53,1,.73,1)
 		div.streamer-info
 			float left
 			.streamer-name
@@ -111,6 +115,19 @@ footer
 		transform  scaleX(0.1)
 	}
 	
+	100% {
+		
+	}
+}
+
+@keyframes rotate-logo {
+	0% {
+		transform rotate(360deg)
+	}
+	
+	60% {
+		transform rotate(-30deg)
+	}
 	100% {
 		
 	}
