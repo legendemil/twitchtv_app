@@ -63,6 +63,12 @@ body {
 .offline-streamer {
   box-shadow: 6px 6px 20px -10px #ec644b;
 }
+footer {
+  padding: 5px;
+  text-align: center;
+  color: #fff;
+  background-color: #444;
+}
 @-webkit-keyframes show-streamer-info {
   0% {
     -webkit-transform: scaleX(0.1);

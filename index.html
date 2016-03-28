@@ -28,6 +28,10 @@
 						
 					</div>					
 				</section>
+				<footer>
+					By Emil Pausz <br>
+					<small>The coolest guy in the universe.</small>
+				</footer>
 			</div>
 		</div>
 	</div>
@@ -41,6 +45,11 @@
 			<div class='streamer-info'>
 				<div class='streamer-name'><a href="{{channelUrl}}" target='_blank'>{{streamerName}}</a></div>
 				<div class='streamer-status'>{{status}}</div>
+				{{#if isActive}}
+					<div>
+						Viewers: {{viewers}}
+					</div>
+				{{/if}}
 			</div>
 		</div>
 	</script>

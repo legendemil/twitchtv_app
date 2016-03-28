@@ -50,7 +50,8 @@ $(function () {
 							channelUrl: info.url,
 							streamerName: info.display_name,
 							status: reduceStatusLength(info.status),
-							isActive: true
+							isActive: true,
+							viewers: data.stream.viewers
 						}
 						// render data
 						renderTwitchUser(streamerTmpl(context));
