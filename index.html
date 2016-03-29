@@ -2,13 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Twitch.tv app</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-	<!-- use poiret one font -->
-	<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<!-- use josefin slab one font -->
+	<link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 
 	<!-- styles for website -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -20,15 +22,40 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2" id='main-side'>
 			<!-- site header -->
-				<header>
-					<h1>Twitch.tv streamers</h1>
+				<header id='site-header'>
+					<h1>Twitch.tv - streamers which you love</h1>
 				</header>
-				<section>
-					gdfgfd
+				<section id='main-content'>
+					<div id="streamers-container">
+						
+					</div>					
 				</section>
+				<footer>
+					By Emil Pausz <br>
+					<small>The coolest guy in the universe.</small>
+				</footer>
 			</div>
 		</div>
 	</div>
+
+
+	<!-- template for  item in streamer list-->
+	<script id='streamer-info-item' type="text/x-handlebars-template">
+		<div class='streamer-info-box {{#if isActive}}active-streamer{{else}}offline-streamer{{/if}}'>
+			<!-- user logo -->
+			<img src="{{logoUrl}}" class="streamer-logo" >
+			<div class='streamer-info'>
+				<div class='streamer-name'><a href="{{channelUrl}}" target='_blank'>{{streamerName}}</a></div>
+				<div class='streamer-status'>{{status}}</div>
+				{{#if isActive}}
+				<div>
+					Viewers: {{viewers}}
+				</div>
+				{{/if}}
+			</div>
+			<div style='clear: both;'></div>
+		</div>
+	</script>
 
 	<!-- Jquery -->
 	<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
