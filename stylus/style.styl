@@ -1,19 +1,23 @@
 // variables
 dark-grey = #444
-
-
+border-size = 3px
+red = #EC644B
+green = #36D7B7
 
 // mixins
 side-borders(size, type, color)
 	border-left size type color
 	border-right size type color
 
+streamer-box-shadow(color)
+	box-shadow 6px 6px 20px -10px color
+
 *
-	font-family 'Poiret One', cursive !important
+	font-family: 'Josefin Slab', serif !important
 
 
 body 
-	background-image url('../img/bg.jpg')
+	background-image url('../../img/bg.jpg')
 	background-size cover
 	background-attachment fixed
 	background-position center center
@@ -29,3 +33,104 @@ body
 		background-color dark-grey 
 		padding 20px
 	
+#main-content
+	padding 20px
+	.streamer-info-box
+		margin-top 20px
+		border-radius (50 + border-size) px
+		transform-origin 0% 100%
+		animation-name show-streamer-info
+		animation-duration 1s
+		img.streamer-logo
+			display block
+			float left
+			max-width 100px
+			max-height 100px
+			border-radius 50px
+			box-shadow 10px 10px 8px -7px grey
+			animation-name rotate-logo
+			animation-delay .6s
+			animation-duration 1s
+			animation-timing-function  cubic-bezier(.53,1,.73,1)
+		div.streamer-info
+			padding-top 30px
+			float left
+			.streamer-name
+				width 200px
+				font-size 1.5em
+				margin-left 20px
+				float left
+				@media (max-width: 1225px)
+					width 180px
+					margin-left 10px
+				@media (max-width: 1214px)
+					font-size 1.3em
+				& a,a:hover, a:visited
+					text-decoration none
+			.streamer-status
+				float left
+				font-size 1em
+				overflow hidden
+
+.active-streamer
+	streamer-box-shadow(green)
+.offline-streamer
+	streamer-box-shadow(red)	
+	
+footer
+	padding 5px
+	text-align center
+	color #fff
+	background-color dark-grey
+	
+@media (max-width: 645px)
+	div.streamer-info
+		padding-top 5px !important
+		width 400px
+		max-height 100px
+		margin-left 10px
+	.streamer-name
+		margin-left 2px !important
+		float none !important
+	.streamer-status
+		font-size 13px !important
+		float none !important
+@media (max-width: 535px)
+	div.streamer-info
+		width 200px
+		
+@media (max-width: 320px) 
+	div.streamer-info
+		width 160px
+		max-height 100px
+	.streamer-name
+		font-size 20px !important
+		margin-left 2px !important
+		float none !important
+	.streamer-status
+		font-size 12px !important
+		float none !important
+		
+
+@keyframes show-streamer-info {
+	0% {
+		transform  scaleX(0.1)
+	}
+	
+	100% {
+		
+	}
+}
+
+@keyframes rotate-logo {
+	0% {
+		transform rotate(360deg)
+	}
+	
+	60% {
+		transform rotate(-30deg)
+	}
+	100% {
+		
+	}
+}
