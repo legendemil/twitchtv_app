@@ -2,7 +2,10 @@ $(function () {
 	// twitch streamers module
 	var TwitchStreamer = (function () {
 		// hold DOM elements
-		var $streamersContainer;
+		var $streamersContainer,
+			$statusBtns,
+			$infoStatusBtn,
+			$statusOptions;
 
 		// array holds array of streamers to follow
 		var streamers = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", 'comster404', 'OgamingSC2', 'ESL_SC2'];
@@ -42,7 +45,6 @@ $(function () {
 				$.getJSON(url, function (data) {
 					//if is online
 					if (data.stream) {
-						console.log(data);
 						var info = data.stream.channel;
 						// set data for template
 						context = {
@@ -99,14 +101,50 @@ $(function () {
 			}
 		})();
 
+
+		// module for stream status mangement
+		var StreamerStatus = (function(){
+			// toggle status btn list
+			function toggleStatusOptions() {
+				$statusOptions.slideToggle();
+			}
+
+			// show proper user by stream status
+			function showStreamersByStatus() {
+				var id = $(this).attr('id');
+				switch(id) {
+					case 'all-streamers-btn':
+						$('.active-streamer,.offline-streamer').show();
+						break;
+					case 'online-streamers-btn':
+						$('.offline-streamer').hide();
+						$('.active-streamer').show();
+						break;
+					case 'offline-streamers-btn':
+						$('.active-streamer').hide();
+						$('.offline-streamer').show();
+						break;
+				}
+			}
+
+			return {
+				toggleStatusOptions: toggleStatusOptions,
+				showStreamersByStatus: showStreamersByStatus
+			}
+		})();
+
 		// cache DOM
 		function cacheDOM() {
 			$streamersContainer = $('#streamers-container');
+			$statusBtns = $('#status-btns');
+			$infoStatusBtn = $statusBtns.find('#info-status-btn'),
+			$statusOptions = $infoStatusBtn.next();
 		}
 
 		// bind events
 		function bindEvents() {
-			// body...
+			$infoStatusBtn.on('click', StreamerStatus.toggleStatusOptions);
+			$statusOptions.delegate('li.status-btn', 'click', StreamerStatus.showStreamersByStatus);
 		}
 
 		function init() {
